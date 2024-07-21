@@ -1,0 +1,31 @@
+from PyQt5.QtCore import Qt
+from PyQt5.QtWidgets import (QApplication, QWidget, QLabel, QVBoxLayout,
+                             QHBoxLayout, QMessageBox, QRadioButton)
+app = QApplication([])
+main_win = QWidget()
+main_win.setWindowTitle('Языки программирования!')
+btn_answer1 = QRadioButton('PHP')
+btn_answer2 = QRadioButton('JavaScript')
+btn_answer3 = QRadioButton('Python')
+btn_answer4 = QRadioButton('Pascal')
+btn_answer5 = QRadioButton('SQL')
+btn_answer6 = QRadioButton('C++')
+layout_main = QVBoxLayout()
+layoutH1 = QHBoxLayout()
+layoutH2 = QHBoxLayout()
+layoutH3 = QHBoxLayout()
+
+layoutH1.addWidget(btn_answer1, alignment= Qt.AlignLeft)
+layoutH1.addWidget(btn_answer2, alignment= Qt.AlignRight)
+layoutH2.addWidget(btn_answer3, alignment= Qt.AlignLeft)
+layoutH2.addWidget(btn_answer4, alignment= Qt.AlignRight)
+layoutH3.addWidget(btn_answer5, alignment= Qt.AlignLeft)
+layoutH3.addWidget(btn_answer6, alignment= Qt.AlignRight)
+
+layout_main.addLayout(layoutH1)
+layout_main.addLayout(layoutH2)
+layout_main.addLayout(layoutH3)
+
+main_win.setLayout(layout_main)
+main_win.show()
+app.exec_()
